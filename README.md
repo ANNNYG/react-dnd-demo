@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# 使用 react-dnd 实现简单拖放功能
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## react-dnd 整体思路
 
-## Available Scripts
+### useDrag
 
-In the project directory, you can run:
+> > 一个钩子函数，为组件添加拖拽能力，返回值有三个
 
-### `npm start`
+**返回值**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> > [0]collected:：包含从 collect 函数收集的属性的对象
+> > [1]drag: ref,添加到需要拥有拖拽能力的 dom 组件中
+> > [2]dragPreview:ref 预览功能，可放在 isDragging 渲染出的组件的 ref 中（估计只有我看得懂）
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**传参**
 
-### `npm test`
+> > 一个对象（详情看文档懒得写了反正我知道）
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### useDrop
 
-### `npm run build`
+> > 一个钩子函数，为组件添加接收放置的能力，需要对应的上拖拽组件（useDrag）的 type，使用 accept 接收
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**demo1 为拖放**
+可将 Box 和 Bucket 再进行封装（我实在是懒得写了）
+demo1 其实也不应该分那么多文件，全部写在 index 里就可以完成（简单的功能分多个文件可读性还差了，因为 demo1 是边看文档边写的，dnd 的文档写的真烂，我实在是懒得优化了）
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**demo2 为拖放排序**
+思路为 需要为同个组件添加放置和拖拽的能力，然后在 hover 回调中修改 useState 的排序
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+后续可能继续更新

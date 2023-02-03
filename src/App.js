@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+
+import Demo1 from "./Demo1";
+import Demo2 from "./Demo2";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ height: "100vh" }}>
+      <DndProvider backend={HTML5Backend}>
+        {/* 拖拉放置组件 */}
+        <Demo1 />
+        {/* 拖拉排序组件 */}
+        <Demo2 />
+      </DndProvider>
     </div>
   );
-}
+};
 
 export default App;
