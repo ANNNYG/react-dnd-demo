@@ -4,21 +4,21 @@
 
 ### useDrag
 
-> > 一个钩子函数，为组件添加拖拽能力，返回值有三个
+一个钩子函数，为组件添加拖拽能力，返回值有三个
 
 **返回值**
 
-> > [0]collected:：包含从 collect 函数收集的属性的对象
-> > [1]drag: ref,添加到需要拥有拖拽能力的 dom 组件中
-> > [2]dragPreview:ref 预览功能，可放在 isDragging 渲染出的组件的 ref 中（估计只有我看得懂）
+[0]collected:：包含从 collect 函数收集的属性的对象
+[1]drag: ref,添加到需要拥有拖拽能力的 dom 组件中
+[2]dragPreview:ref 预览功能，可放在 isDragging 渲染出的组件的 ref 中（估计只有我看得懂）
 
 **传参**
 
-> > 一个对象（详情看文档懒得写了反正我知道）
+一个对象（详情看文档懒得写了反正我知道）
 
 ### useDrop
 
-> > 一个钩子函数，为组件添加接收放置的能力，需要对应的上拖拽组件（useDrag）的 type，使用 accept 接收
+一个钩子函数，为组件添加接收放置的能力，需要对应的上拖拽组件（useDrag）的 type，使用 accept 接收
 
 **demo1 为拖放**
 可将 Box 和 Bucket 再进行封装（我实在是懒得写了）
